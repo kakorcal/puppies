@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-// import { generate } from 'shortid';
-// import { Carousel } from './Carousel';
 import dogs from '../dogs';
 import './App.css';
 
 let list1 = [2, 1, 0];
-let list2 = [2, 1, 0, 3, 0, 2, 1, 3, 2];
+let list2 = [2, 1, 0, 3, 0, 2, 1, 3, 2, 3];
 let list3 = [2, 1, 0, 3, 0];
 const list = list2;
 const MAX_Z = 30;
-const MAX_DIST = 0.9; // represents 90% of the width of flex child
-// const INTERVAL = 0.50; // represents
+const MIN_DIST = 0.25
+const MAX_DIST = 0.80; // represents 90% of the width of flex child
+const INTERVAL = 0.05; // represents
 const initialState = {
   list,
   hoverIdx: null,
@@ -48,7 +47,7 @@ class App extends Component {
       let dist = 0;
 
       if (idx !== 0 && idx !== list.length - 1) {
-        dist = (MAX_DIST * artWidth) / diff;
+        dist = artWidth * (MIN_DIST + ((diff - 1) * INTERVAL));
 
         if (idx < hoverIdx) dist = -1 * dist;
       }
@@ -67,11 +66,13 @@ class App extends Component {
     this.setState(Object.assign({}, initialState, { list }));
   };
 
+  // TODO
   addPuppy = () => {
     const list = [0, ...this.state.list];
     this.setState({ list });
   };
 
+  // TODO
   removePuppy = () => {};
 
   render() {
