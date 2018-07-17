@@ -38,11 +38,6 @@ button:hover {
   cursor: pointer;
 }
 
-.wrapper {
-  display: flex;
-  justify-content: center;
-}
-
 .container {
   display: flex;
   height: 20vw;
@@ -73,7 +68,7 @@ button:hover {
   min-width: 275px;
   min-height: 275px;
   /* background: rgba(0, 0, 0, 0.1); */
-  transition: all 300ms ease-out;
+  transition: all 200ms ease-out;
 }
 
 .art:nth-child(1) {

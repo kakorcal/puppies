@@ -8,17 +8,18 @@ let list3 = [2, 1, 0, 3, 0];
 const list = list2;
 const MAX_Z = 30;
 const MIN_DIST = 0.25
-const MAX_DIST = 0.80; // represents 90% of the width of flex child
-const INTERVAL = 0.05; // represents
+const MAX_DIST = 0.80;
+const INTERVAL = 0.05;
 const initialState = {
   list,
+  isHovered: false,
   hoverIdx: null,
   listPositions: list.map((item, idx) => {
     return {
       zIndex: MAX_Z - idx,
       transform: `translate3d(0, 0, 0)`
     };
-  })
+  }),
 };
 
 class App extends Component {
@@ -58,7 +59,7 @@ class App extends Component {
       };
     });
 
-    this.setState({ hoverIdx, listPositions });
+    this.setState({ isHovered: true, hoverIdx, listPositions });
   };
 
   handleMouseLeave = () => {
@@ -83,25 +84,23 @@ class App extends Component {
           <button onClick={this.removePuppy}>REMOVE PUPPY</button>
         </div>
         <div className="RecentlyPlayed">
-          <div className="wrapper">
-            <div className="container" ref={this.container}>
-              {this.state.list.map((dog, idx) => {
-                const styles = this.state.listPositions[idx];
+          <div className="container" ref={this.container}>
+            {this.state.list.map((dog, idx) => {
+              const styles = this.state.listPositions[idx];
 
-                return (
-                  <div
-                    key={idx}
-                    className="art"
-                    onMouseEnter={() => this.handleMouseEnter(idx)}
-                    onMouseLeave={this.handleMouseLeave}
-                  >
-                    <div className="art__child" style={styles}>
-                      <img src={dogs[dog]} alt="" />
-                    </div>
+              return (
+                <div
+                  key={idx}
+                  className="art"
+                  onMouseEnter={() => this.handleMouseEnter(idx)}
+                  onMouseLeave={this.handleMouseLeave}
+                >
+                  <div className="art__child" style={styles}>
+                    <img src={dogs[dog]} alt="" />
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
