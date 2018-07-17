@@ -1,0 +1,7 @@
+.Carousel {
+  margin-top: 2rem;
+  height: 300px;
+  border: 1px solid #222;
+  perspective: 500px;
+  position: relative;
+}

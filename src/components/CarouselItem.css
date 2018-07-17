@@ -1,0 +1,32 @@
+.CarouselItem {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  opacity: 0.7;
+  position: absolute;
+}
+
+.CarouselItem:nth-child(1) {
+  z-index: 4;
+  transform: translate3d(0, 0, 0);
+}
+
+.CarouselItem:nth-child(2) {
+  z-index: 3;
+  /* Offset + (MaxPos - ViewPortPos)  */
+  transform: translate3d(0, 0, 0);
+}
+
+.CarouselItem:nth-child(3) {
+  z-index: 2;
+  transform: translate3d(600px, 0, 0);
+}
+
+.CarouselItem:nth-child(4) {
+  z-index: 1;
+  transform: translate3d(900px, 0, 0);
+}
+
+.CarouselItem__art {
+  width: 100%;
+}

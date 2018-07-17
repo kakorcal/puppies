@@ -1,0 +1,114 @@
+img {
+  width: 100%;
+  /* opacity: 0; */
+}
+
+.App {
+  width: 90%;
+  margin: auto;
+}
+
+.RecentlyPlayed__title {
+  font-size: 1.5em;
+}
+
+.buttons {
+  display: flex;
+  margin: 1.5rem 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #222;
+}
+
+button {
+  flex: 0 1 120px;
+  padding: 15px;
+  margin-right: 15px;
+  background: lightseagreen;
+}
+
+button:nth-child(1) {
+  background: lightseagreen;
+}
+
+button:nth-child(2) {
+  background: lightcoral;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  height: 275px;
+  width: 100%;
+}
+
+.art {
+  flex: 0 1 315px;
+  position: relative;
+  transition: all 200ms ease-in;
+  /* overflow: hidden; */
+}
+
+.art:first-of-type {
+  flex: 0 0 275px;
+}
+
+.art:hover {
+  cursor: pointer;
+}
+
+.art__child {
+  position: absolute;
+  right: 0;
+  width: 275px;
+  height: 275px;
+  /* background: rgba(0, 0, 0, 0.1); */
+  transition: all 300ms ease-out;
+}
+
+.art:nth-child(1) {
+  background: salmon;
+}
+
+.art:nth-child(2) {
+  background: lightseagreen;
+}
+
+.art:nth-child(3) {
+  background: lightslategrey;
+}
+
+.art:nth-child(4) {
+  background: orchid;
+}
+
+.art:nth-child(5) {
+  background: yellowgreen;
+}
+
+.art:nth-child(6) {
+  background: aqua;
+}
+
+.art:nth-child(7) {
+  background: lightcoral;
+}
+
+.art:nth-child(8) {
+  background: lightsteelblue;
+}
+
+.art:nth-child(9) {
+  background: lightpink;
+}
+
+.art:nth-child(10) {
+  background: limegreen;
+}
