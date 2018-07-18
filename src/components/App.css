@@ -1,6 +1,6 @@
 img {
   width: 100%;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .App {
@@ -48,8 +48,7 @@ button:hover {
 .art {
   flex: 0 1 22vw;
   position: relative;
-  transition: all 200ms ease-in;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .art:first-of-type {
@@ -68,9 +67,28 @@ button:hover {
   min-width: 275px;
   min-height: 275px;
   /* background: rgba(0, 0, 0, 0.1); */
-  transition: all 200ms ease-out;
+  transition: all 200ms ease-in-out;
 }
 
+.art__child--hover-out {
+  animation: hover-out 400ms ease-in-out;
+}
+
+.initial-fade-in {
+  animation: fade-in 400ms ease-in-out;
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes hover-out {
+  0%   { opacity: 0.9; }
+  100% { opacity: 1; }
+}
+
+/*
 .art:nth-child(1) {
   background: salmon;
 }
@@ -109,4 +127,4 @@ button:hover {
 
 .art:nth-child(10) {
   background: limegreen;
-}
+} */
